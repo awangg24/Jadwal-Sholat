@@ -1,0 +1,268 @@
+{% extends 'front/base.html' %}
+{% load static %}
+
+{% block content %}
+<br><br><br><br>
+
+<header>
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="page-header min-vh-75" style="background-image: url('/static/front/img/alquran.jpg');" loading="lazy">
+          <span class="mask bg-gradient-dark"></span>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6 my-auto">
+                <h4 class="text-white mb-0 fadeIn1 fadeInBottom"></h4>
+                <h1 class="text-white fadeIn2 fadeInBottom">Jadwal Sholatku</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card shadow-lg mt-n5 mx-4 mb-4">
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="page-header min-vh-75" style="background-image: url('/static/front/img/quran.jpg');" loading="lazy">
+          <span class="mask bg-gradient-dark"></span>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6 my-auto">
+                <h4 class="text-white mb-0 fadeIn1 fadeInBottom"></h4>
+                <h1 class="text-white fadeIn2 fadeInBottom">Jadwal sholatku</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card shadow-lg mt-n5 mx-4 mb-4">
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="page-header min-vh-75" style="background-image: url('/static/front/img/masjid.jpg');" loading="lazy">
+          <span class="mask bg-gradient-dark"></span>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6 my-auto">
+                <h4 class="text-white mb-0 fadeIn1 fadeInBottom"></h4>
+                <h1 class="text-white fadeIn2 fadeInBottom">Jadwal sholatku</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card shadow-lg mt-n5 mx-4 mb-4">
+        </div>
+      </div>
+    </div>
+    <div class="min-vh-75 position-absolute w-100 top-0">
+      <a class="carousel-control-prev ms-0 ms-md-n5 mt-12 mb-n7 mt-md-0 mb-md-0" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon position-absolute bottom-50" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </a>
+      <a class="carousel-control-next ms-0 ms-md-n5 mt-12 mb-n7 mt-md-0 mb-md-0" href="#carouselExampleControls" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon position-absolute bottom-50" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- START Blogs w/ 4 cards w/ image & text & link -->
+<section class="py-6">
+  <div class="container">
+    <div class="row">
+      <div class="text-center mx-auto">
+        <h3 class="mb-1">INFO JADWAL</h3>
+        <br>
+      </div>
+      
+      <div class="d-inline-flex justify-content-center mb-3">
+        <div class="col-lg-4 mb-lg-0 mb-3">
+          <div class="p-3 card card-plain card-blog  ">
+            <div class="card-image border-radius-lg position-relative ">
+              <a href="{% url 'isi_jadwal' %}">
+                <div class="blur-shadow-image">
+                  <img class="img border-radius-lg move-on-hover" src="/static/front/img/kaabah2.png">
+                </div>
+              </a>
+            </div>
+            <div class="card-body px-0">
+              <p class="text-uppercase font-weight-bold text-danger text-xs">Jadwal</p>
+              <h5>
+                <a href="{% url 'isi_jadwal' %}" class="text-dark font-weight-bold">Jadwal Sholat</a>
+              </h5>
+              <p>
+                Jadwal Sholat 2022
+              </p>
+              <div class="author align-items-center">
+                <img src="/static/front/img/awang.jpeg" alt="ivana" class="avatar shadow" loading="lazy">
+                <div class="name ps-2">
+                  <span>Awang herjunie nurdy</span>
+                  <div class="stats">
+                    <small>Posted on 1 December</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+  
+        <div class="col-lg-4 mb-lg-0 mb-3">
+          <div class="p-3 card card-plain card-blog mt-4">
+            <div class="card-image border-radius-lg position-relative">
+              <a href="{% url 'isi_imam' %}">
+                <div class="blur-shadow-image">
+                  <img class="img border-radius-lg move-on-hover" src="/static/front/img/al-quran.jpg">
+                </div>
+              </a>
+            </div>
+            <div class="card-body px-0">
+              <p class="text-uppercase font-weight-bold text-danger text-xs">Jadwal</p>
+              <h5>
+                <a href="{% url 'isi_imam' %}" class="text-dark font-weight-bold">Jadwal imam</a>
+              </h5>
+              <p>
+                Jadwal Imam 
+              </p>
+              <div class="author align-items-center">
+                <img src="/static/front/img/awang.jpeg" alt="ivana" class="avatar shadow" loading="lazy">
+                <div class="name ps-2">
+                  <span>Awang herjunie nurdy</span>
+                  <div class="stats">
+                    <small>Posted on 1 December</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-lg-4 mb-lg-0 mb-3">
+          <div class="p-3 card card-plain card-blog mt-4">
+            <div class="card-image border-radius-lg position-relative">
+              <a href="{% url 'isi_surah' %}">
+                <div class="blur-shadow-image">
+                  <img class="img border-radius-lg move-on-hover" src="/static/front/img/examples/muslim.jpg">
+                </div>
+              </a>
+            </div>
+            <div class="card-body px-0">
+              <p class="text-uppercase font-weight-bold text-danger text-xs">Surat</p>
+              <h5>
+                <a href="{% url 'isi_surah' %}" class="text-dark font-weight-bold">Surat</a>
+              </h5>
+              <p>
+                Daftar Surat 
+              </p>
+              <div class="author align-items-center">
+                <img src="/static/front/img/awang.jpeg" alt="ivana" class="avatar shadow" loading="lazy">
+                <div class="name ps-2">
+                  <span>Awang herjunie nurdy</span>
+                  <div class="stats">
+                    <small>Posted on 1 December</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END Blogs w/ 4 cards w/ image & text & link -->
+
+
+<!-- <section class="py-7">
+  <div class="container">
+    <div class="row">
+      <div class="col-9 text-center mx-auto">
+        <h3 class="mb-1">INFO JADWAL</h3>
+        <p class="mb-6 px-md-6"></p>
+      </div>
+      <div class="col-lg-4 mb-lg-0 mb-4">
+        <div class="card">
+          <div class="card-header p-0 mx-3 mt-n4 position-relative z-index-1">
+            <a href="{% url 'isi_jadwal' %}" class="d-block blur-shadow-image">
+              <img src="/static/front/img/kaabah2.png" class="img-fluid border-radius-md" alt="anastasia" loading="lazy">
+            </a>
+          </div>
+          <div class="card-body">
+            <span class="text-gradient text-primary text-uppercase text-xs font-weight-bold">jadwal</span>
+            <a href="{% url 'isi_jadwal' %}" class="card-title mt-3 h5 d-block text-darker">
+              Jadwal sholat
+            </a>
+            <p class="card-description mb-4">
+              Jadwal sholat 
+            </p>
+            <div class="author align-items-center">
+              <img src="/static/front/img/awang.jpeg" alt="..." class="avatar shadow" loading="lazy">
+              <div class="name ps-2">
+                <span>Awang herjunie nurdy</span>
+                <div class="stats">
+                  <small>Posted on 1 December</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-lg-0 mb-4">
+        <div class="card">
+          <div class="card-header p-0 mx-3 mt-n4 position-relative z-index-1">
+            <a href="{% url 'isi_imam' %}" class="d-block blur-shadow-image">
+              <img src="/static/front/img/al-quran.jpg" class="img-fluid border-radius-md" alt="nastuh" loading="lazy">
+            </a>
+          </div>
+          <div class="card-body">
+            <span class="text-gradient text-info text-uppercase text-xs font-weight-bold">Jadwal</span>
+            <a href="{% url 'isi_imam' %}" class="text-darker card-title mt-3 h5 d-block">
+              Jadwal imam
+            </a>
+            <p class="card-description mb-4">
+              Jadwal imam sholat
+            </p>
+            <div class="author align-items-center">
+              <img src="/static/front/img/awang.jpeg" alt="ivana" class="avatar shadow" loading="lazy">
+              <div class="name ps-2">
+                <span>Awang herjunie nurdy</span>
+                <div class="stats">
+                  <small>Posted on 1 December</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-lg-0 mb-4">
+        <div class="card">
+          <div class="card-header p-0 mx-3 mt-n4 position-relative z-index-1">
+            <a href="{% url 'isi_surah' %}" class="d-block blur-shadow-image">
+              <img src="/static/front/img/examples/muslim.jpg" class="img-fluid border-radius-md" alt="nastuh" loading="lazy">
+            </a>
+          </div>
+          <div class="card-body">
+            <span class="text-gradient text-info text-uppercase text-xs font-weight-bold">Surat</span>
+            <a href="{% url 'isi_surah' %}" class="text-darker card-title mt-3 h5 d-block">
+              Surat
+            </a>
+            <p class="card-description mb-4">
+              Daftar Surat
+            </p>
+            <div class="author align-items-center">
+              <img src="/static/front/img/awang.jpeg" alt="ivana" class="avatar shadow" loading="lazy">
+              <div class="name ps-2">
+                <span>Awang herjunie nurdy</span>
+                <div class="stats">
+                  <small>Posted on 1 December</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+{% endblock content %}

@@ -1,0 +1,93 @@
+{% extends 'front/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<header>
+    <div class="page-header min-vh-50" style="background-image: url('https://images.unsplash.com/photo-1560740365-d6fe1b7f4396?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');" loading="lazy">
+      <span class="mask bg-gradient-dark"></span>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-8 d-flex justify-content-center flex-column text-center position-absolute top-0 h-100">
+            <div class="mx-auto text-start">
+              <h1 class="text-white">Jadwal Sholatku</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</header>
+
+<section class="pt-3 pt-md-5 pb-md-5 pb-lg-7">
+    <div class="container">
+      <div class="col-12 mx-auto">
+        <div class="card shadow-lg">
+          <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
+            <div class="bg-gradient-warning shadow-warning border-radius-lg p-4">
+              <h3 class="text-white mb-0">SURAT</h3>
+              <p class="text-white opacity-8 mb-0">Desember 2022</p>
+            </div>
+          </div>
+          <div class="card-body p-sm-5 pt-0">
+            <div class="accordion" id="accordionFaq">
+              <div class="accordion-item mb-3">
+                <h6 class="accordion-header" id="headingOne">
+                  <button class="accordion-button border-bottom font-weight-bold text-start" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Daftar Surat
+                    <i class="collapse-close fa fa-plus text-xs pt-1 position-absolute end-0"></i>
+                    <i class="collapse-open fa fa-minus text-xs pt-1 position-absolute end-0"></i>
+                  </button>
+                </h6>
+                {% for s in surah %}
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionFaq">
+                  <div class="accordion-body text-sm opacity-8">
+                    <td>
+                      No :
+                    </td>
+                    {{s.nomor}}
+                    <br>
+                    <td>
+                      Nama :
+                    </td>
+                    {{s.nama}}
+                    <br>
+                    <td>
+                      Latin :
+                    </td>
+                    {{s.nama_latin}}
+                    <br>
+                    <td>
+                      Jumlah Ayat :
+                    </td>
+                    {{s.jumlah_ayat}}
+                    <br>
+                    <td>
+                        Diturunkan di :
+                    </td>
+                    {{s.tempat_turun}}
+                    <br>
+                    <td>
+                        Arti :
+                    </td>
+                    {{s.arti}}
+                    <br>
+                    <td>
+                        Deskripsi :
+                    </td>
+                    {{s.deskripsi}}
+                    <hr>
+                </div>
+              </div>  
+                    {% endfor %}
+              <div class="accordion-item mb-3">
+                <h6 class="accordion-header" id="headingTwo">
+                </h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock content %}

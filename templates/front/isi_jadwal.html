@@ -1,0 +1,213 @@
+{% extends 'front/base.html' %}
+{% load static %}
+
+{% block content %}
+<header>
+  <div class="page-header min-vh-50" style="background-image: url('https://images.unsplash.com/photo-1560740365-d6fe1b7f4396?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');" loading="lazy">
+    <span class="mask bg-gradient-dark"></span>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-8 d-flex justify-content-center flex-column text-center position-absolute top-0 h-100">
+          <div class="mx-auto text-start">
+            <h1 class="text-white">Jadwal Sholatku</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6 mb-4">
+<!--   <section class="testimonial-2 mt-5 pt-5">
+      <div class="container">
+        <div class="row mt-n5 border-radius-md pb-4 p-3 mx-sm-0 mx-1 position-relative z-index-3">
+          <div class="col-lg-3 mt-lg-n2 mt-2">
+            <label class="ms-0">KOTA</label>
+            <select class="form-control" name="choice-button" id="choice-button">
+              <option value="Choice 1" selected="">Jakarta</option>
+              <option value="Choice 2">Balikpapan</option>
+              <option value="Choice 3">Samarinda</option>
+              <option value="Choice 4">Bandung</option>
+            </select>
+          </div>
+          <div class="col-lg-3 d-flex align-items-center my-auto">
+            <button type="button" class="btn bg-gradient-primary w-100 mb-0 m4 mt-3">Search</button>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="gliderrr">
+            <div data-glide-el="track" class="glide__track">
+              <ul class="glide__slides">
+                <li class="glide__slide">
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <section class="pt-5">
+      <div class="container">
+        <div class="col-12 mx-auto">
+          <div class="card shadow-lg">
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
+              <div class="bg-gradient-success shadow-success border-radius-lg p-4">
+                <h3 class="text-white mb-0">Jadwal Sholat</h3>
+                <p class="text-white opacity-8 mb-0">Desember 2022</p>
+              </div>
+              <br>
+          <div class="col-lg-12">
+            <div class="table-responsive">
+              <table class="table table-pricing">
+                <thead class="text-light">
+                  <tr>
+                    <th class="ps-2">
+                      <h6 class="font-weight-bold">Tanggal</h6>
+                    </th>
+                    <th class="text-center">
+                      <h6 class="font-weight-bold">Imsyak</h6>
+                    </th>
+                    <th class="text-center">
+                      <h6 class="font-weight-bold">Shubuh</h6>
+                    </th>
+                    <th class="text-center">
+                      <h6 class="font-weight-bold">Terbit</h6>
+                    </th>
+                    <th class="text-center">
+                      <h6 class="font-weight-bold">Dhuha</h6>
+                    </th>
+                    <th class="text-center">
+                      <h6 class="font-weight-bold">Ashr</h6>
+                    </th>
+                    <th class="text-center">
+                      <h6 class="font-weight-bold">Magrib</h6>
+                    </th>
+                    <th class="text-center">
+                      <h6 class="font-weight-bold">Isya</h6>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for j in jadwal %}
+                  <tr>
+                    <td class="py-3">
+                      <span class="text-xs">{{j.tanggal}}</span>
+                    </td>
+                    <td class="text-center py-3">
+                      {{j.imsyak}}
+                    </td>
+                    <td class="text-center py-3">
+                      {{j.shubuh}}
+                    </td>
+                    <td class="text-center py-3">
+                      {{j.terbit}}
+                    </td>
+                    <td class="text-center py-3">
+                      {{j.dhuha}}
+                    </td>
+                    <td class="text-center py-3">
+                      {{j.ashr}}
+                    </td>
+                    <td class="text-center py-3">
+                      {{j.magrib}}
+                    </td>
+                    <td class="text-center py-3">
+                      {{j.isya}}
+                    </td>
+                </tbody>
+                {% endfor %}
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  </div>
+
+ 
+
+
+<!--  <section class="pt-3 pt-md-5 pb-md-5 pb-lg-7">
+    <div class="container">
+      <div class="col-12 mx-auto">
+        <div class="card shadow-lg">
+          <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
+            <div class="bg-gradient-primary shadow-primary border-radius-lg p-4">
+              <h3 class="text-white mb-0">Jadwal Sholat</h3>
+              <p class="text-white opacity-8 mb-0">Jum'at 2 Desember 2022</p>
+            </div>
+          </div>
+          <div class="card-body p-sm-5 pt-0">
+            <h5 class="my-4"></h5>
+            <div class="accordion" id="accordionFaq">
+              <div class="accordion-item mb-3">
+                <h6 class="accordion-header" id="headingOne">
+                  <button class="accordion-button border-bottom font-weight-bold text-start" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Daftar jadwal sholat
+                    <i class="collapse-close fa fa-plus text-xs pt-1 position-absolute end-0"></i>
+                    <i class="collapse-open fa fa-minus text-xs pt-1 position-absolute end-0"></i>
+                  </button>
+                </h6>
+                {% for j in jadwal %}
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionFaq">
+                  <div class="accordion-body text-sm opacity-8">
+                    <td>
+                      Tanggal :
+                    </td>
+                    <td>
+                      {{forloop.counter}}
+                    </td>
+                    <br>
+                  <td>
+                    Imsyak :
+                  </td> 
+                   {{j.imsyak}}
+                    <br>
+                    <td>
+                      Shubuh :
+                    </td> 
+                    {{j.shubuh}}
+                    <br>
+                    <td>
+                      Terbit :
+                    </td> 
+                    {{j.terbit}}
+                    <br>
+                    <td>
+                      Dhuha :
+                    </td> 
+                    {{j.dhuha}}
+                    <br>
+                    <td>
+                      Ashr :
+                    </td> 
+                    {{j.ashr}}
+                    <br>
+                    <td>
+                      Maghrib :
+                    </td> 
+                    {{j.maghrib}}
+                    <br>
+                    <td>
+                      Isya :
+                    </td> 
+                    {{j.isya}}
+                    <br>
+                    <td>
+                      Kota :
+                    </td> 
+                    {{j.kotam}}
+                    <br>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+{% endblock content %}

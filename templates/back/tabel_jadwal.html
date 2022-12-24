@@ -1,0 +1,56 @@
+{% extends 'back/base.html' %}
+
+
+
+{% block content %}
+
+<div class="card-header">
+    <h3 class="mb-0">Tabel jadwal</h3>
+    <p class="text-sm mb-0">
+      jadwal tabel
+    </p>
+  </div>
+  <div class="table-responsive py-4">
+    <a href="{% url 'tambah_jadwal' %}" class="btn btn-success mb-3" role="button">Tambah jadwal</a>
+    <table class="table table-flush" id="datatable-basic">
+      <thead class="thead-light">
+        <tr>
+          <th>Tanggal</th>
+          <th>Imsyak</th>
+          <th>Shubuh</th>
+          <th>terbit</th>
+          <th>dhuha</th>
+          <th>dzuhur</th>
+          <th>ashr</th>
+          <th>maghrib</th>
+          <th>Isya</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        {% for j in jadwal %}
+        <tr>
+          <td>{{j.tanggal}}</td>
+          <td>{{j.imsyak}}</td>
+          <td>{{j.shubuh}}</td>
+          <td>{{j.terbit}}</td>
+          <td>{{j.dhuha}}</td>
+          <td>{{j.dzuhur}}</td>
+          <td>{{j.ashr}}</td>
+          <td>{{j.magrib}}</td>
+          <td>{{j.isya}}</td>
+            <td>
+                <a class="btn btn-info" href="{% url 'lihat_jadwal' j.id %}">Lihat</a>
+                <a class="btn btn-warning" href="{% url 'edit_jadwal' j.id %}">Edit</a>
+                <a onclick="return confirm('delete jadwal?');" class="btn btn-danger" href="{% url 'delete_jadwal' j.id %}">Delete</a>
+            </td>
+          </td>
+        </tr>
+        {% endfor %}
+        
+      </tbody>
+    </table>
+  </div>
+
+{% endblock content %}

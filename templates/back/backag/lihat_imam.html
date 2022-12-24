@@ -1,0 +1,38 @@
+{% extends 'back/base.html' %}
+
+{% block content %}
+
+<div class="card-wrapper">
+    <!-- Form controls -->
+    <div class="card">
+        <form method="POST">
+            {% csrf_token %}
+      <!-- Card header -->
+      <div class="card-header">
+        <h3 class="mb-0">Lihat imam</h3>
+      </div>
+        <!-- Card body -->
+        <div class="card-body">
+            <div class="form-group">
+                <label class="form-control-label" for="exampleFormControlInput1">Nama : </label>
+                {{imam.nama}}
+            </div>
+            <div class="form-group">
+                <label class="form-control-label" for="exampleFormControlInput1">Hari : </label>
+                {{imam.hari}}
+            </div>
+            <div class="form-group">
+                <label class="form-control-label" for="exampleFormControlTextarea1">Jam : </label>
+                {{imam.jam}}
+            </div>
+            <div class="form-group">
+                <label class="form-control-label" for="exampleFormControlSelect1">Sholata: </label>
+                {{imam.sholata}}
+              </div>
+            <a class="btn btn-primary" href="{% url 'tabel_imam' %}">Back</a>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+{% endblock content %}

@@ -1,0 +1,54 @@
+{% extends 'back/base.html' %}
+
+{% block content %}
+
+<div class="card-wrapper">
+    <!-- Form controls -->
+    <div class="card">
+        <form method="POST">
+            {% csrf_token %}
+      <!-- Card header -->
+      <div class="card-header">
+        <h3 class="mb-0">Lihat jadwal</h3>
+      </div>
+        <!-- Card body -->
+        <div class="card-body">
+          <div class="form-group">
+            <label class="form-control-label" for="exampleFormControlInput1">Tanggal : </label>
+            {{jadwal.tanggal}}
+          </div>    
+            <div class="form-group">
+                <label class="form-control-label" for="exampleFormControlInput1">Imsyak : </label>
+                {{jadwal.imsyak}}
+            </div>
+            <div class="form-group">
+                <label class="form-control-label" for="exampleFormControlInput1">Shubuh : </label>
+                {{jadwal.shubuh}}
+            </div>
+            <div class="form-group">
+                <label class="form-control-label" for="exampleFormControlTextarea1">Dhuha : </label>
+                {{jadwal.dhuha}}
+            </div>
+            <div class="form-group">
+                <label class="form-control-label" for="exampleFormControlSelect1">Dzuhur: </label>
+                {{jadwal.dzuhur}}
+              </div>
+              <div class="form-group">
+                <label class="form-control-label" for="exampleFormControlSelect1">Ashr : </label>
+                {{jadwal.ashr}}
+              </div>
+              <div class="form-group">
+                <label class="form-control-label" for="exampleFormControlSelect1">Maghrib: </label>
+                {{jadwal.magrib}}
+              </div>
+              <div class="form-group">
+                <label class="form-control-label" for="exampleFormControlSelect1">Isya : </label>
+                {{jadwal.isya}}
+              </div>
+            <a class="btn btn-primary" href="{% url 'tabel_jadwal' %}">Back</a>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+{% endblock content %}

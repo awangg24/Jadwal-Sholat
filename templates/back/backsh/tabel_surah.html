@@ -1,0 +1,48 @@
+{% extends 'back/base.html' %}
+
+
+
+{% block content %}
+
+<div class="card-header">
+    <h3 class="mb-0">Tabel surah</h3>
+    <p class="text-sm mb-0">
+      surah tabel
+    </p>
+  </div>
+  <div class="table-responsive py-4">
+    <table class="table table-flush" id="datatable-basic">
+      <thead class="thead-light">
+        <tr>
+          <th>No</th>
+          <th>Nama</th>
+          <th>Latin</th>
+          <th>Jumlah Ayat</th>
+          <th>Tempat Turun</th>
+          <th>Arti</th>
+          <th>Audio</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        {% for s in surah %}
+        <tr>
+          <td>{{s.nomor}}</td>
+          <td>{{s.nama}}</td>
+          <td>{{s.nama_latin}}</td>
+          <td>{{s.jumlah_ayat}}</td>
+          <td>{{s.tempat_turun}}</td>
+          <td>{{s.arti}}</td>
+          <td>{{s.audio}}</td>
+          <td>
+            <a onclick="return confirm('delete surah?');" class="btn btn-danger" href="{% url 'delete_surah' s.id %}">Delete</a>
+          </td>
+        </tr>
+        {% endfor %}
+        
+      </tbody>
+    </table>
+  </div>
+
+{% endblock content %}

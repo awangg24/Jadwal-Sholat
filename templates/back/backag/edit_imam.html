@@ -1,0 +1,41 @@
+{% extends 'back/base.html' %}
+
+
+{% block content %}
+
+<div class="row">
+    <div class="col-lg-12">
+      <div class="card-wrapper">
+        <!-- Form controls -->
+        <div class="card">
+          <!-- Card header -->
+          <div class="card-header">
+            <h3 class="mb-0">Edit imam</h3>
+          </div>
+          <!-- Card body -->
+          <div class="card-body">
+            <form method="POST">
+                {% csrf_token %}
+              <div class="form-group">
+                <label class="form-control-label" for="exampleFormControlInput1">Nama</label>
+                <input name="nama" type="text" class="form-control" id="exampleFormControlInput1" placeholder="nama" value="{{imam.nama}}">
+              </div>
+              <div class="form-group">
+                <label class="form-control-label" for="exampleFormControlInput1">Hari</label>
+                <input name="hari" type="text" class="form-control" id="exampleFormControlInput1" placeholder="hari" value="{{imam.hari}}">
+              </div>
+              <div class="form-group">
+                <label class="form-control-label" for="exampleFormControlInput1">Jam</label>
+                <input name="jam" type="text" class="form-control" id="exampleFormControlInput1" placeholder="jam" value="{{imam.jam}}">
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  
+{% endblock content %}

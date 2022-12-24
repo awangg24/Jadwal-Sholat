@@ -1,0 +1,68 @@
+{% extends 'back/base.html' %}
+
+
+{% block content %}
+
+<div class="row">
+    <div class="col-lg-12">
+      <div class="card-wrapper">
+        <!-- Form controls -->
+        <div class="card">
+          <!-- Card header -->
+          <div class="card-header">
+            <h3 class="mb-0">Tambah jadwal</h3>
+          </div>
+          <!-- Card body -->
+          <div class="card-body">
+            <form method="POST">
+                {% csrf_token %}
+              <div class="form-group">
+                <label class="form-control-label" for="exampleFormControlInput1">Imsyak</label>
+                <input name="imsyak" type="text" class="form-control" id="exampleFormControlInput1" placeholder="imsyak">
+              </div>
+              <div class="form-group">
+                <label class="form-control-label" for="exampleFormControlInput1">Shubuh</label>
+                <input name="shubuh" type="text" class="form-control" id="exampleFormControlInput1" placeholder="shubuh">
+              </div>
+              <div class="form-group">
+                <label class="form-control-label" for="exampleFormControlInput1">Terbit</label>
+                <input name="terbit" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Terbit">
+              </div>
+              <div class="form-group">
+                <label class="form-control-label" for="exampleFormControlInput1">Dhuha</label>
+                <input name="dhuha" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Dhuha">
+              </div>
+              <div class="form-group">
+                <label class="form-control-label" for="exampleFormControlInput1">Dzuhur</label>
+                <input name="dzuhur" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Dzuhur">
+              </div>
+              <div class="form-group">
+                <label class="form-control-label" for="exampleFormControlInput1">Ashr</label>
+                <input name="ashr" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ashr">
+              </div>
+              <div class="form-group">
+                <label class="form-control-label" for="exampleFormControlInput1">Maghrib</label>
+                <input name="magrib" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Maghrib">
+              </div>
+              <div class="form-group">
+                <label class="form-control-label" for="exampleFormControlInput1">Isya</label>
+                <input name="isya" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Isya">
+              </div>
+              <div class="form-group">
+                <label class="form-control-label" for="exampleFormControlSelect1">Tanggal</label>
+                <select name="tanggal" class="form-control" id="exampleFormControlSelect1">
+                    {% for t in tanggal %}
+                    <option value="{{t.nama}}">{{t.nama}}</option>                 
+                    {% endfor %}
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
+

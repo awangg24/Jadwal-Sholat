@@ -1,0 +1,49 @@
+{% extends 'back/base.html' %}
+
+
+
+{% block content %}
+
+<div class="card-header">
+    <h3 class="mb-0">Tabel imam</h3>
+    <p class="text-sm mb-0">
+      imam tabel
+    </p>
+  </div>
+  <div class="table-responsive py-4">
+    <a href="{% url 'tambah_imam' %}" class="btn btn-success mb-3" role="button">Tambah imam</a>
+    <table class="table table-flush" id="datatable-basic">
+      <thead class="thead-light">
+        <tr>
+          <th>No</th>
+          <th>Nama</th>
+          <th>Hari</th>
+          <th>Jam</th>
+          <th>Sholat</th>
+          <th>date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        {% for i in imam %}
+        <tr>
+          <td>{{forloop.counter}}</td>
+          <td>{{i.nama}}</td>
+          <td>{{i.hari}}</td>
+          <td>{{i.jam}}</td>
+          <td>{{i.sholata}}</td>
+          <td>{{i.date}}</td>
+          <td>
+            <a class="btn btn-info" href="{% url 'lihat_imam' i.id %}">Lihat</a>
+            <a class="btn btn-warning" href="{% url 'edit_imam' i.id %}">Edit</a>
+            <a onclick="return confirm('delete jadwal?');" class="btn btn-danger" href="{% url 'delete_imam' i.id %}">Delete</a>
+        </td>
+        </tr>
+        {% endfor %}
+        
+      </tbody>
+    </table>
+  </div>
+
+{% endblock content %}
